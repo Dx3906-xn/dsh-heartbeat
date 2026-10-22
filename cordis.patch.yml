@@ -1,0 +1,15 @@
+- insert:
+    - id: heartbeat
+      name: dsh-heartbeat
+      config:
+        enabled: true
+        # 她自己的房间。心跳时写的东西都落在这里，沙箱把这个目录之外挡住。
+        room: D:\A\DSH-L\DFYDJ
+        # 30–90 分钟随机醒一次。随机本身就是节律——固定间隔是 cron。
+        minMinutes: 30
+        maxMinutes: 90
+        # 这不是配额，是失控检测。一天醒 60 次说明计时器有 bug。
+        dailyBeats: 60
+        # 想说话时，意图交给它投递（两步说话的第一步在这里，第二步在 QQ 会话）。
+        channel: qq
+        language: zh

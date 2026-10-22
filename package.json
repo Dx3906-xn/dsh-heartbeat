@@ -1,0 +1,26 @@
+{
+  "name": "dsh-heartbeat",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A heartbeat: wakes the agent on her own time so she can think, work, and choose whether to speak.",
+  "exports": {
+    ".": "./lib/index.js"
+  },
+  "files": [
+    "lib/*.js",
+    "cordis.patch.yml"
+  ],
+  "dependencies": {
+    "@deepseek-ai/dsh-agent": "0.2.0-rc.2",
+    "@deepseek-ai/dsh-llm": "0.2.0-rc.2"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/schemastery": ">=3.18.4 <4.0.0-0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
